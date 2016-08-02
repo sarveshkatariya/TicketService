@@ -124,7 +124,7 @@ public class TicketServiceImpl implements TicketService {
 	 * @return a SeatHold object identifying the specific seats and related
 	 *         information
 	 */
-	public synchronized SeatHold findAndHoldSeats(int numSeats, Optional<Integer> minLevel, Optional<Integer> maxLevel, String customerEmail) {
+	public SeatHold findAndHoldSeats(int numSeats, Optional<Integer> minLevel, Optional<Integer> maxLevel, String customerEmail) {
 		if (numSeats <= 0 || StringUtils.isEmpty(customerEmail))
 			return null;
 
@@ -183,7 +183,7 @@ public class TicketServiceImpl implements TicketService {
 	* @param customerEmail the email address of the customer to which the seat hold is assigned
 	* @return a reservation confirmation code
 	*/
-	public synchronized String reserveSeats(int seatHoldId, String customerEmail) {
+	public String reserveSeats(int seatHoldId, String customerEmail) {
 		String reservationId = null;
 		if (seatHoldId <=0 || StringUtils.isEmpty(customerEmail))
 			return null;

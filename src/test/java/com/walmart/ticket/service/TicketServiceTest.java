@@ -48,7 +48,6 @@ public class TicketServiceTest extends TestCase {
 	
 	public void testNumberofSeatsAvailable() {
 		int numberOfSeatsAvailable = ticketService.numSeatsAvailable(null);
-		System.out.println("Number of seats available - " + numberOfSeatsAvailable);
 		Assert.assertEquals(6250, numberOfSeatsAvailable);
 	}
 	
